@@ -23,6 +23,10 @@
     grid-template-areas: "left content right";
 }
 
+@mixin gridMainMedia ($main, $left, $rigjt) {
+    grid-template-columns: $left $main $rigjt;
+}
+
 @mixin gridSplit ($left, $right) {
     @include grid();
     grid-template-columns: $left $right;
@@ -274,12 +278,20 @@
 
 /* Max 2560px */
 
-@media only screen and (max-width: 2560px) {}
+@media only screen and (max-width: 2560px) {
+    .grid-main {
+        @include gridMainMedia(2fr, 1fr, 1fr);
+    }
+}
 
 
 /* Max 1440px */
 
-@media only screen and (max-width: 1440px) {}
+@media only screen and (max-width: 1440px) {
+    .grid-main {
+        @include gridMainMedia(1fr, $gutter, $gutter);
+    }
+}
 
 
 /* Max 1024px */
@@ -295,6 +307,9 @@
 /* Max 425px */
 
 @media only screen and (max-width: 425px) {
+    .grid-main {
+        @include gridMainMedia(1fr, $gutter, $gutter);
+    }
     .grid-121,
     .grid-141,
     .grid-1-1,

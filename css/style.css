@@ -940,11 +940,29 @@ textarea:focus + .label-textarea::after {
 
 /* Media Queries */
 /* Max 2560px */
+@media only screen and (max-width: 2560px) {
+  .grid-main {
+    -ms-grid-columns: 1fr 2fr 1fr;
+        grid-template-columns: 1fr 2fr 1fr;
+  }
+}
+
 /* Max 1440px */
+@media only screen and (max-width: 1440px) {
+  .grid-main {
+    -ms-grid-columns: 5vw 1fr 5vw;
+        grid-template-columns: 5vw 1fr 5vw;
+  }
+}
+
 /* Max 1024px */
 /* Max 768px */
 /* Max 425px */
 @media only screen and (max-width: 425px) {
+  .grid-main {
+    -ms-grid-columns: 5vw 1fr 5vw;
+        grid-template-columns: 5vw 1fr 5vw;
+  }
   .grid-121,
   .grid-141,
   .grid-1-1,
@@ -1366,6 +1384,27 @@ textarea:focus + .label-textarea::after {
           animation: from-left 1000ms ease forwards 1500ms;
 }
 
+.from-left-6 {
+  -webkit-transform: translateX(-500%);
+          transform: translateX(-500%);
+  -webkit-animation: from-left 1000ms ease forwards 1800ms;
+          animation: from-left 1000ms ease forwards 1800ms;
+}
+
+.from-left-7 {
+  -webkit-transform: translateX(-500%);
+          transform: translateX(-500%);
+  -webkit-animation: from-left 1000ms ease forwards 2100ms;
+          animation: from-left 1000ms ease forwards 2100ms;
+}
+
+.from-left-8 {
+  -webkit-transform: translateX(-500%);
+          transform: translateX(-500%);
+  -webkit-animation: from-left 1000ms ease forwards 2400ms;
+          animation: from-left 1000ms ease forwards 2400ms;
+}
+
 @-webkit-keyframes from-left {
   0% {
     opacity: 0;
@@ -1725,6 +1764,9 @@ footer .social a {
   .burger {
     display: block;
     z-index: 4;
+  }
+  .logo {
+    width: 16vw;
   }
   .img-centered {
     top: 50%;

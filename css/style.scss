@@ -154,6 +154,9 @@ footer .social a {
         display: block;
         z-index: 4;
     }
+    .logo {
+        width: $logo-w*2;
+    }
     .img-centered {
         top: 50%;
         -ms-transform: translateY(0%);
