@@ -1,6 +1,27 @@
-// Animations
+/* Animations */
+
 @mixin animate ($name, $_duration, $_delay) {
     animation: $name $_duration ease forwards $_delay;
+}
+
+@mixin top ($_delay) {
+    transform: translateY(-500%);
+    animation: from-top $duration*2 ease forwards $delay*$_delay;
+}
+
+@mixin bottom ($_delay) {
+    transform: translateY(500%);
+    animation: from-bottom $duration*2 ease forwards $delay*$_delay;
+}
+
+@mixin left ($_delay) {
+    transform: translateX(-500%);
+    animation: from-left $duration*2 ease forwards $delay*$_delay;
+}
+
+@mixin right ($_delay) {
+    transform: translateX(500%);
+    animation: from-right $duration*2 ease forwards $delay*$_delay;
 }
 
 
@@ -106,6 +127,26 @@
     animation-name: from-top;
 }
 
+.from-top-1 {
+    @include top(1);
+}
+
+.from-top-2 {
+    @include top(2);
+}
+
+.from-top-3 {
+    @include top(3);
+}
+
+.from-top-4 {
+    @include top(4);
+}
+
+.from-top-5 {
+    @include top(5);
+}
+
 @keyframes from-top {
     0% {
         opacity: 0;
@@ -116,6 +157,7 @@
     }
     95% {
         opacity: 1;
+        transform: scaleY(1);
     }
     100% {
         transform: translateY(0);
@@ -128,6 +170,26 @@
 .from-bottom {
     transform: translateY(500%);
     animation-name: from-bottom;
+}
+
+.from-bottom-1 {
+    @include bottom(1);
+}
+
+.from-bottom-2 {
+    @include bottom(2);
+}
+
+.from-bottom-3 {
+    @include bottom(3);
+}
+
+.from-bottom-4 {
+    @include bottom(4);
+}
+
+.from-bottom-5 {
+    @include bottom(5);
 }
 
 @keyframes from-bottom {
@@ -154,10 +216,30 @@
     animation-name: from-left;
 }
 
+.from-left-1 {
+    @include left(1);
+}
+
+.from-left-2 {
+    @include left(2);
+}
+
+.from-left-3 {
+    @include left(3);
+}
+
+.from-left-4 {
+    @include left(4);
+}
+
+.from-left-5 {
+    @include left(5);
+}
+
 @keyframes from-left {
     0% {
         opacity: 0;
-        transform: translateX(-100%);
+        transform: translateX(-100%), scaleX(0);
     }
     50% {
         opacity: 0;
@@ -176,6 +258,26 @@
 .from-right {
     transform: translateX(500%);
     animation-name: from-right;
+}
+
+.from-right-1 {
+    @include right(1);
+}
+
+.from-right-2 {
+    @include right(2);
+}
+
+.from-right-3 {
+    @include right(3);
+}
+
+.from-right-4 {
+    @include right(4);
+}
+
+.from-right-5 {
+    @include right(5);
 }
 
 @keyframes from-right {

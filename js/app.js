@@ -32,11 +32,7 @@ const navLinksDelay = () => {
 
     for (var i = navLinks.length - 1; i >= 0; i--) {
         counter++;
-        navLinks[i].classList.toggle("from-right");
-        navLinks[i].classList.toggle("ease");
-        navLinks[i].classList.toggle("forwards");
-        navLinks[i].classList.toggle("delay-" + counter);
-        navLinks[i].classList.toggle("duration-2");
+        navLinks[i].classList.toggle("from-right-" + (counter + 1));
     }
 }
 
