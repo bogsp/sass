@@ -28,6 +28,20 @@
 
 /* Padding */
 
+.p-auto {
+    padding: auto;
+}
+
+.py-auto {
+    padding-top: auto;
+    padding-bottom: auto;
+}
+
+.px-auto {
+    padding-left: auto;
+    padding-right: auto;
+}
+
 
 /* Padding Small */
 
@@ -173,6 +187,20 @@
 
 
 /* Margins */
+
+.m-auto {
+    margin: auto;
+}
+
+.my-auto {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
 
 
 /* Margin Small */
