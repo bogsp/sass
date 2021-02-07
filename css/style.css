@@ -1838,4 +1838,15 @@ footer .social a {
 .bogs {
   height: 50vh;
 }
+
+.home-text {
+  text-align: left;
+}
+
+/* Max 425px */
+@media only screen and (max-width: 425px) {
+  .home-text {
+    text-align: center;
+  }
+}
 /*# sourceMappingURL=style.css.map */
