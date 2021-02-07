@@ -1,0 +1,337 @@
+/* Grid Areas
+/* Content Layouts
+/* Gap
+/* Columns
+/* Rows
+/* Alignment
+/* Flexbox
+/* Media Queries
+/*   Max 2560px
+/*   Max 1440px
+/*   Max 1024px
+/*   Max 768px
+/*   Max 425px
+*/
+
+@mixin grid {
+    display: grid;
+}
+
+@mixin gridMain ($main, $left, $rigjt) {
+    @include grid();
+    grid-template-columns: $left $main $rigjt;
+    grid-template-areas: "left content right";
+}
+
+@mixin gridSplit ($left, $right) {
+    @include grid();
+    grid-template-columns: $left $right;
+}
+
+@mixin gridMultiCol ($repeat) {
+    @include grid();
+    grid-template-columns: repeat($repeat, 1fr);
+}
+
+@mixin gridMultiRow ($repeat) {
+    grid-template-rows: repeat($repeat, 1fr);
+}
+
+
+/* Grid Areas */
+
+.content {
+    grid-area: content;
+}
+
+.left {
+    grid-area: left;
+}
+
+.right {
+    grid-area: right;
+}
+
+
+/* Content Layouts */
+
+.grid-main {
+    @include gridMain(1fr, $gutter, $gutter);
+}
+
+.grid-121 {
+    @include gridMain(2fr, 1fr, 1fr);
+}
+
+.grid-141 {
+    @include gridMain(4fr, 1fr, 1fr);
+}
+
+.grid-1-1 {
+    @include gridSplit(1fr, 1fr)
+}
+
+.grid-1-2 {
+    @include gridSplit(1fr, 2fr)
+}
+
+.grid-1-3 {
+    @include gridSplit(1fr, 3fr)
+}
+
+.grid-1-4 {
+    @include gridSplit(1fr, 4fr)
+}
+
+.grid-2-1 {
+    @include gridSplit(2fr, 1fr)
+}
+
+.grid-3-1 {
+    @include gridSplit(3fr, 1fr)
+}
+
+.grid-4-1 {
+    @include gridSplit(4fr, 1fr)
+}
+
+
+/* Columns */
+
+.col-1 {
+    grid-template-columns: 1fr;
+}
+
+.col-2 {
+    @include gridMultiCol(2);
+}
+
+.col-3 {
+    @include gridMultiCol(3);
+}
+
+.col-4 {
+    @include gridMultiCol(4);
+}
+
+.col-5 {
+    @include gridMultiCol(5);
+}
+
+.col-6 {
+    @include gridMultiCol(6);
+}
+
+.col-s2 {
+    grid-column: span 2;
+}
+
+.col-s3 {
+    grid-column: span 3;
+}
+
+.col-s4 {
+    grid-column: span 4;
+}
+
+.col-s5 {
+    grid-column: span 5;
+}
+
+.col-s6 {
+    grid-column: span 6;
+}
+
+
+/* Rows */
+
+.row-1 {
+    grid-template-rows: 1fr;
+}
+
+.row-2 {
+    @include gridMultiRow(2);
+}
+
+.row-3 {
+    @include gridMultiRow(3);
+}
+
+.row-4 {
+    @include gridMultiRow(4);
+}
+
+.row-5 {
+    @include gridMultiRow(5);
+}
+
+.row-6 {
+    @include gridMultiRow(6);
+}
+
+.row-s2 {
+    grid-row: span 2;
+}
+
+.row-s3 {
+    grid-row: span 3;
+}
+
+.row-s4 {
+    grid-row: span 4;
+}
+
+.row-s5 {
+    grid-row: span 5;
+}
+
+.row-s6 {
+    grid-row: span 6;
+}
+
+
+/* Alignment */
+
+.grid-center {
+    place-items: center;
+}
+
+.grid-jc {
+    justify-items: center;
+}
+
+.grid-je {
+    justify-items: end;
+}
+
+.grid-ae {
+    align-items: end;
+}
+
+
+/* Flexbox */
+
+@mixin flex {
+    display: flex;
+}
+
+@mixin flexCol {
+    @include flex();
+    flex-direction: column;
+}
+
+@mixin flexCenter {
+    @include flex();
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flexJustify($justify) {
+    @include flex();
+    justify-content: $justify;
+}
+
+.flex {
+    @include flex();
+}
+
+.flex-col {
+    @include flexCol();
+}
+
+.flex-center {
+    @include flexCenter();
+}
+
+.flex-between {
+    @include flexJustify(space-between);
+}
+
+.flex-around {
+    @include flexJustify(space-around);
+}
+
+.flex-jc {
+    @include flexJustify(center);
+}
+
+.grid-ac,
+.flex-ac {
+    align-items: center;
+}
+
+.flex-je {
+    @include flexJustify(end);
+}
+
+.flex-ae {
+    align-items: flex-end;
+}
+
+
+/* Media Queries */
+
+
+/* Max 2560px */
+
+@media only screen and (max-width: 2560px) {}
+
+
+/* Max 1440px */
+
+@media only screen and (max-width: 1440px) {}
+
+
+/* Max 1024px */
+
+@media only screen and (max-width: 1024px) {}
+
+
+/* Max 768px */
+
+@media only screen and (max-width: 768px) {}
+
+
+/* Max 425px */
+
+@media only screen and (max-width: 425px) {
+    .grid-121,
+    .grid-141,
+    .grid-1-1,
+    .grid-1-2,
+    .grid-1-3,
+    .grid-1-4,
+    .grid-2-1,
+    .grid-3-1,
+    .grid-4-1,
+    .col-1,
+    .col-2,
+    .col-3,
+    .col-4,
+    .col-5,
+    .col-6 {
+        grid-template-columns: 1fr;
+    }
+    .col-s2,
+    .col-s3,
+    .col-s4,
+    .col-s5,
+    .col-s6 {
+        grid-column: span 1;
+    }
+    .row-1,
+    .row-2,
+    .row-3,
+    .row-4,
+    .row-5,
+    .row-6 {
+        grid-template-rows: 1fr;
+    }
+    .row-s2,
+    .row-s3,
+    .row-s4,
+    .row-s5,
+    .row-s6 {
+        grid-row: span 1;
+    }
+}

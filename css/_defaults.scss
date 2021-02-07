@@ -1,0 +1,300 @@
+@mixin noSpace {
+    padding: 0;
+    margin: 0;
+}
+
+
+/* Defaults */
+
+* {
+    box-sizing: border-box;
+    @include noSpace();
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    font-family: $font-body;
+    font-size: $font;
+    line-height: $p-space;
+    letter-spacing: $p-lead;
+    overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $font-heading;
+    font-weight: 300;
+}
+
+h1,
+h2 {
+    line-height: 1.2;
+    margin: $p-default*.6 0;
+}
+
+p {
+    margin-bottom: $p-space;
+}
+
+a {
+    text-decoration: none;
+    color: $primary;
+    &:hover {
+        opacity: .7;
+    }
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+
+/* Typography */
+
+.text-centered {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.sm {
+    font-size: $p-default * .6;
+}
+
+.md {
+    font-size: $p-default * 1.5;
+}
+
+.lg {
+    font-size: $p-default * 3;
+}
+
+.xl {
+    font-size: $p-default * 5;
+}
+
+.caps {
+    text-transform: uppercase;
+}
+
+.i-xl {
+    font-size: $i-xl;
+}
+
+.dropcap:first-letter {
+    float: left;
+    font-size: $p-default * 5;
+    font-weight: bolder;
+    margin: $gap*1.5 $gap $gap*1.5 0;
+}
+
+
+/* Text Columns */
+
+.text-col-2 {
+    column-count: 2;
+}
+
+.text-col-3 {
+    column-count: 3;
+}
+
+.text-col-4 {
+    column-count: 4;
+}
+
+@mixin colGap ($x) {
+    column-gap: $gap * $x;
+}
+
+.text-col-gap-sm {
+    @include colGap(1);
+}
+
+.text-col-gap-md {
+    @include colGap(2);
+}
+
+.text-col-gap-lg {
+    @include colGap(3);
+}
+
+.text-col-gap-xl {
+    @include colGap(4);
+}
+
+
+/* Elements */
+
+
+/* Buttons */
+
+@mixin btnOutline ($color) {
+    color: $color;
+    background-color: transparent;
+    border: 1px solid $color;
+}
+
+.btn {
+    display: inline-block;
+    color: $light;
+    background-color: $primary;
+    border: none;
+    padding: $pad*0.5 $pad;
+    cursor: pointer;
+    &:hover {
+        transform: scale(.98);
+    }
+}
+
+.btn-round {
+    border-radius: $btn-radius;
+}
+
+.btn-outline {
+    @include btnOutline($primary);
+}
+
+.btn-secondary {
+    background-color: $secondary;
+}
+
+.btn-secondary-outline {
+    @include btnOutline($secondary);
+}
+
+.btn-dark {
+    color: $light;
+    background-color: $dark;
+}
+
+.btn-dark-outline {
+    @include btnOutline($dark);
+}
+
+.btn-light {
+    color: $dark;
+    background-color: $light;
+}
+
+.btn-light-outline {
+    @include btnOutline($light);
+}
+
+img {
+    width: inherit;
+    object-fit: cover;
+}
+
+.img-centered {
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+
+/* Cards */
+
+.card {
+    padding: $gap $gap $gap;
+    border-radius: $card-radius;
+}
+
+
+/* Forms */
+
+textarea,
+input[type=text],
+input[type=email] {
+    outline: none;
+    border: none;
+    background: none;
+}
+
+input[type=submit] {
+    width: fit-content;
+    font-family: $font-body;
+    font-size: $p-default;
+    line-height: $p-space;
+    letter-spacing: $p-lead;
+}
+
+input[type=text]:focus+.label-text .input-content,
+input[type=text]:valid+.label-text .input-content,
+input[type=email]:focus+.label-email .input-content,
+input[type=email]:valid+.label-email .input-content,
+textarea:valid+.label-textarea .textarea-content,
+textarea:focus+.label-textarea .textarea-content {
+    transform: translateY(-100%);
+    font-size: $footer;
+    color: $primary;
+}
+
+input[type=text]:focus+.label-text::after,
+input[type=text]:valid+.label-text::after,
+input[type=email]:focus+.label-email::after,
+input[type=email]:valid+.label-email::after,
+textarea:valid+.label-textarea::after,
+textarea:focus+.label-textarea::after {
+    transform: translateX(0%);
+}
+
+.label-text,
+.label-textarea,
+.label-email {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    border-bottom: 1px solid $dark;
+}
+
+.label-text::after,
+.label-textarea::after,
+.label-email::after {
+    position: absolute;
+    content: "";
+    bottom: -1;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-bottom: 1px solid $primary;
+    transform: translateX(-100%);
+    transition: all 0.3s ease;
+}
+
+.input-content {
+    position: absolute;
+    bottom: 3px;
+    left: 0;
+    transition: all 0.3s ease;
+}
+
+.textarea-content {
+    position: absolute;
+    top: 25px;
+    left: 0;
+    transition: all 0.3s ease;
+}
+
+
+/* Effects */
+
+.shadow {
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.shadow-high {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}

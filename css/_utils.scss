@@ -1,0 +1,67 @@
+/* Colors */
+
+.primary {
+    background-color: $primary;
+}
+
+.primary-text {
+    color: $primary;
+}
+
+.secondary {
+    background-color: $secondary;
+}
+
+.secondary-text {
+    color: $secondary;
+}
+
+.dark {
+    background-color: $dark;
+    color: $light;
+}
+
+.dark-text {
+    color: $dark;
+}
+
+.light {
+    background-color: $light;
+    color: $dark;
+}
+
+.light-text {
+    color: $light;
+}
+
+.success {
+    background-color: $success;
+}
+
+.success-text {
+    color: $success;
+}
+
+.error {
+    background-color: $error;
+}
+
+.error-text {
+    color: $error;
+}
+
+.warning {
+    background-color: $warning;
+}
+
+.warning-text {
+    color: $warning;
+}
+
+.no-overflow {
+    overflow: hidden;
+}
+
+.min-h {
+    min-height: 90vh;
+}

@@ -1,0 +1,243 @@
+// Animations
+@mixin animate ($name, $_duration, $_delay) {
+    animation: $name $_duration ease forwards $_delay;
+}
+
+
+/* Duration */
+
+.duration-1 {
+    animation-duration: $duration * 1;
+}
+
+.duration-2 {
+    animation-duration: $duration * 2;
+}
+
+.duration-3 {
+    animation-duration: $duration * 3;
+}
+
+.duration-4 {
+    animation-duration: $duration * 4;
+}
+
+.duration-5 {
+    animation-duration: $duration * 5;
+}
+
+
+/* Delay */
+
+.delay-1 {
+    animation-delay: $delay * 1;
+}
+
+.delay-2 {
+    animation-delay: $delay * 2;
+}
+
+.delay-3 {
+    animation-delay: $delay * 3;
+}
+
+.delay-4 {
+    animation-delay: $delay * 4;
+}
+
+.delay-5 {
+    animation-delay: $delay * 5;
+}
+
+.delay-6 {
+    animation-delay: $delay * 6;
+}
+
+.delay-7 {
+    animation-delay: $delay * 7;
+}
+
+.delay-8 {
+    animation-delay: $delay * 8;
+}
+
+.delay-9 {
+    animation-delay: $delay * 9;
+}
+
+.delay-10 {
+    animation-delay: $delay * 10;
+}
+
+
+/* Easing */
+
+.ease {
+    animation-timing-function: ease;
+}
+
+.ease-in {
+    animation-timing-function: ease-in;
+}
+
+.ease-in-out {
+    animation-timing-function: ease-in-out;
+}
+
+.ease-out {
+    animation-timing-function: ease-out;
+}
+
+
+/* Modes */
+
+.forwards {
+    animation-fill-mode: forwards;
+}
+
+
+/* Animations & Keyframes */
+
+
+/* From Top */
+
+.from-top {
+    transform: translateY(-500%);
+    animation-name: from-top;
+}
+
+@keyframes from-top {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    50% {
+        opacity: 0;
+    }
+    95% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+/* From Bottom */
+
+.from-bottom {
+    transform: translateY(500%);
+    animation-name: from-bottom;
+}
+
+@keyframes from-bottom {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    50% {
+        opacity: 0;
+    }
+    95% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+/* From Left */
+
+.from-left {
+    transform: translateX(-500%);
+    animation-name: from-left;
+}
+
+@keyframes from-left {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    50% {
+        opacity: 0;
+    }
+    95% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
+/* From Right */
+
+.from-right {
+    transform: translateX(500%);
+    animation-name: from-right;
+}
+
+@keyframes from-right {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    50% {
+        opacity: 0;
+    }
+    95% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.fade-in {
+    animation-name: fade-in;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.scale-from-bottom {
+    transform: scale(0);
+    animation-name: scale-from-bottom;
+}
+
+@keyframes scale-from-bottom {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    20% {
+        opacity: 0;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/* Mobile Nav */
+
+@keyframes navLinkFadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(50%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0%);
+    }
+}

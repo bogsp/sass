@@ -1,0 +1,43 @@
+// Colors
+$primary: #808080;
+$secondary: #afafaf;
+$highlight: #dddddd;
+$dark: #333333;
+$light: #fff;
+$success: #009900;
+$error: #990000;
+$warning: #ffbb00;
+// Typography
+$font-body: 'Roboto',
+sans-serif;
+$font-heading: 'Roboto',
+sans-serif;
+$font: 16px;
+$p-default: 1rem;
+$p-space: 1.6rem;
+$p-lead: .05rem;
+$nav: .8rem;
+$footer: .8rem;
+$pad: $p-default;
+$pad-md: $pad * 2;
+$pad-lg: $pad * 3;
+$pad-xl: $pad * 4;
+$i-xl: 6rem;
+// Layout
+$nav-h: 10vh;
+$logo-w: 8vw;
+$main-h: 83vh;
+$footer-h: 8vh;
+$burger-h: .15rem;
+$burger-w: 1.2rem;
+$burger-m: .25rem;
+$gap: .8rem;
+$gap-md: $gap * 2;
+$gap-lg: $gap * 3;
+$gap-xl: $gap * 4;
+$gutter: 5vw;
+$btn-radius: .25rem;
+$card-radius: 1rem;
+// Animation
+$duration: 500ms;
+$delay: 300ms;
